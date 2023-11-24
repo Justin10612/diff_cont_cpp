@@ -23,7 +23,7 @@ class DiffDriveController : public rclcpp::Node
     {
       wheel_cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Vector3>("wheel_cmd_vel", 10);
       cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "cmd_vel", 10, std::bind(&DiffDriveController::cmd_vel_callback, this, std::placeholders::_1));
+        "diff_cmd_vel", 10, std::bind(&DiffDriveController::cmd_vel_callback, this, std::placeholders::_1));
     }
 
   private:
